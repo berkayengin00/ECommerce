@@ -2,5 +2,5 @@
 
 public interface IReadRepository<T> where T : class, new()
 {
-	T GetAll();
+	List<T> GetAll(Func<T,bool>? query=null);
 }

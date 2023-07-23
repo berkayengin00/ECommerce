@@ -2,5 +2,5 @@
 
 public interface IDeletedRepositoryAsync<T> where T : class, new()
 {
-	bool DeleteAsync(T entity);
+	Task<bool> DeleteAsync(T entity);
 }

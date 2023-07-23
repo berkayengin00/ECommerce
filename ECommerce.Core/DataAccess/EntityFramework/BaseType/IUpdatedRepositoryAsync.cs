@@ -2,5 +2,5 @@
 
 public interface IUpdatedRepositoryAsync<T> where T : class, new()
 {
-	bool UpdateAsync(T entity);
+	Task<bool> UpdateAsync(T entity);
 }

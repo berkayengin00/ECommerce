@@ -1,6 +1,8 @@
-﻿namespace ECommerce.Core.DataAccess.EntityFramework.BaseType;
+﻿using System.Linq.Expressions;
+
+namespace ECommerce.Core.DataAccess.EntityFramework.BaseType;
 
 public interface IReadRepositoryAsync<T> where T : class, new()
 {
-	T GetAllAsync();
+	Task<List<T>> GetAllAsync(Expression<Func<T,bool>>? query = null );
 }

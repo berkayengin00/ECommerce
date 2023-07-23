@@ -11,6 +11,10 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework.Context
 {
 	public class ECommerceContext:DbContext
 	{
+		public ECommerceContext(DbContextOptions<ECommerceContext> options):base(options)
+		{
+		}
+
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<User> Users { get; set; }
@@ -18,11 +22,6 @@ namespace ECommerce.DataAccess.Concrete.EntityFramework.Context
 		public DbSet<SellerCustomer> SellerCustomers { get; set; }
 		public DbSet<Employee> Employees { get; set; }
 		public DbSet<Role> Roles { get; set; }
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer("Server=.;Database=ECommerceDB;Trusted_Connection=true;");
-		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

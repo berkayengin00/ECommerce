@@ -2,5 +2,5 @@
 
 public interface IAddedRepositoryAsync<T> where T : class, new()
 {
-	bool AddAsync(T entity);
+	Task<bool> AddAsync(T entity);
 }
