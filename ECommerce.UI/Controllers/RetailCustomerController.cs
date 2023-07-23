@@ -2,7 +2,7 @@
 
 namespace ECommerce.UI.Controllers
 {
-	public class HomeController : Controller
+	public class RetailCustomerController : Controller
 	{
 		public IActionResult Index()
 		{
