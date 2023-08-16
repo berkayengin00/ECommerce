@@ -1,0 +1,88 @@
+2023-08-15 17:14:07.621 +03:00 [INF] User profile is available. Using 'C:\Users\Berkay\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-15 17:14:18.980 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-15 17:14:18.986 +03:00 [INF] Hosting environment: Development
+2023-08-15 17:14:18.990 +03:00 [INF] Content root path: C:\Users\Berkay\source\PersonelExample\ECommerce\ECommerce.UI\
+2023-08-15 17:14:19.046 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/ - -
+2023-08-15 17:14:40.862 +03:00 [INF] User profile is available. Using 'C:\Users\Berkay\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-15 17:14:45.658 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-15 17:14:45.668 +03:00 [INF] Hosting environment: Development
+2023-08-15 17:14:45.672 +03:00 [INF] Content root path: C:\Users\Berkay\source\PersonelExample\ECommerce\ECommerce.UI\
+2023-08-15 17:14:45.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/ - -
+2023-08-15 17:14:48.627 +03:00 [INF] Executing endpoint 'ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI)'
+2023-08-15 17:14:48.718 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ECommerce.UI.Controllers.HomeController (ECommerce.UI).
+2023-08-15 17:14:48.745 +03:00 [INF] Executing ViewResult, running view Index.
+2023-08-15 17:14:49.223 +03:00 [INF] Executed ViewResult - view Index executed in 484.6542ms.
+2023-08-15 17:14:49.237 +03:00 [INF] Executed action ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI) in 518.8989ms
+2023-08-15 17:14:49.239 +03:00 [INF] Executed endpoint 'ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI)'
+2023-08-15 17:25:21.568 +03:00 [INF] User profile is available. Using 'C:\Users\Berkay\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-15 17:25:26.597 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-15 17:25:26.604 +03:00 [INF] Hosting environment: Development
+2023-08-15 17:25:26.607 +03:00 [INF] Content root path: C:\Users\Berkay\source\PersonelExample\ECommerce\ECommerce.UI\
+2023-08-15 17:25:26.640 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/ - -
+2023-08-15 17:25:27.919 +03:00 [INF] Executing endpoint 'ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI)'
+2023-08-15 17:25:28.003 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ECommerce.UI.Controllers.HomeController (ECommerce.UI).
+2023-08-15 17:25:28.022 +03:00 [INF] Executing ViewResult, running view Index.
+2023-08-15 17:25:28.371 +03:00 [INF] Executed ViewResult - view Index executed in 348.8166ms.
+2023-08-15 17:25:28.384 +03:00 [INF] Executed action ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI) in 379.8894ms
+2023-08-15 17:25:28.385 +03:00 [INF] Executed endpoint 'ECommerce.UI.Controllers.HomeController.Index (ECommerce.UI)'
+2023-08-15 17:25:29.094 +03:00 [INF] / Çalıştı
+2023-08-15 17:25:35.754 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/css/bootstrap.min.css - -
+2023-08-15 17:25:38.043 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/css/site.css?v=63ti19K2kHJhDTiWij2JylPfEVTwLuKR4AakWgJNEY0 - -
+2023-08-15 17:25:38.052 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/lib/jquery/dist/jquery.min.js - -
+2023-08-15 17:25:41.073 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/css/site.css - -
+2023-08-15 17:25:41.098 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/ - - - 200 - text/html;+charset=utf-8 13285.1970ms
+2023-08-15 17:25:42.328 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/ECommerce.UI.styles.css?v=9Vl82GmbCsdxVk11lcEhX_KyEpcEHA4gsIwkSgVbh1c - -
+2023-08-15 17:25:43.139 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-08-15 17:25:44.232 +03:00 [INF] The file /css/site.css was not modified
+2023-08-15 17:25:44.232 +03:00 [INF] The file /css/site.css was not modified
+2023-08-15 17:25:44.232 +03:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2023-08-15 17:25:44.232 +03:00 [INF] The file /ECommerce.UI.styles.css was not modified
+2023-08-15 17:25:44.232 +03:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2023-08-15 17:25:44.232 +03:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2023-08-15 17:25:44.234 +03:00 [INF] /ECommerce.UI.styles.css Çalıştı
+2023-08-15 17:25:44.234 +03:00 [INF] /lib/bootstrap/dist/css/bootstrap.min.css Çalıştı
+2023-08-15 17:25:44.234 +03:00 [INF] /lib/jquery/dist/jquery.min.js Çalıştı
+2023-08-15 17:25:44.234 +03:00 [INF] /css/site.css Çalıştı
+2023-08-15 17:25:44.234 +03:00 [INF] /lib/bootstrap/dist/js/bootstrap.bundle.min.js Çalıştı
+2023-08-15 17:25:44.234 +03:00 [INF] /css/site.css Çalıştı
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/css/site.css?v=63ti19K2kHJhDTiWij2JylPfEVTwLuKR4AakWgJNEY0 - - - 304 - text/css 6192.8146ms
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/css/bootstrap.min.css - - - 304 - text/css 8481.9410ms
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/css/site.css - - - 304 - text/css 3163.3112ms
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/ECommerce.UI.styles.css?v=9Vl82GmbCsdxVk11lcEhX_KyEpcEHA4gsIwkSgVbh1c - - - 304 - text/css 1908.4933ms
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 6187.2860ms
+2023-08-15 17:25:44.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 1099.5255ms
+2023-08-15 17:25:44.262 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/_framework/aspnetcore-browser-refresh.js - -
+2023-08-15 17:25:44.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/_vs/browserLink - -
+2023-08-15 17:25:44.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - -
+2023-08-15 17:25:45.228 +03:00 [INF] The file /js/site.js was not modified
+2023-08-15 17:25:45.229 +03:00 [INF] /js/site.js Çalıştı
+2023-08-15 17:25:45.229 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - - - 304 - application/javascript 961.9614ms
+2023-08-15 17:25:45.260 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 982.3559ms
+2023-08-15 17:25:45.310 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - -
+2023-08-15 17:25:46.553 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 2285.9495ms
+2023-08-15 17:25:46.586 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\Berkay\source\PersonelExample\ECommerce\ECommerce.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2023-08-15 17:25:46.586 +03:00 [INF] /lib/bootstrap/dist/js/bootstrap.bundle.min.js.map Çalıştı
+2023-08-15 17:25:46.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - - - 200 327261 text/plain 1298.1507ms
+2023-08-15 17:25:47.077 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/favicon.ico - -
+2023-08-15 17:25:50.900 +03:00 [INF] The file /favicon.ico was not modified
+2023-08-15 17:25:50.900 +03:00 [INF] /favicon.ico Çalıştı
+2023-08-15 17:25:50.901 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/favicon.ico - - - 304 - image/x-icon 3823.4539ms
+2023-08-15 17:25:58.295 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:61354/retailcustomer/getalluser - -
+2023-08-15 17:26:05.041 +03:00 [INF] Executing endpoint 'ECommerce.UI.Controllers.RetailCustomerController.GetAllUser (ECommerce.UI)'
+2023-08-15 17:26:05.065 +03:00 [INF] Route matched with {action = "GetAllUser", controller = "RetailCustomer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUser() on controller ECommerce.UI.Controllers.RetailCustomerController (ECommerce.UI).
+2023-08-15 17:26:09.631 +03:00 [INF] Entity Framework Core 6.0.20 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: None
+2023-08-15 17:26:11.251 +03:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Status], [u].[UpdatedDate], [e].[FirstName], [e].[LastName], [e].[UserName], [r].[Age], [r].[FirstName], [r].[Lastname], [s].[TaxNo], CASE
+    WHEN [s].[Id] IS NOT NULL THEN N'SellerCustomer'
+    WHEN [r].[Id] IS NOT NULL THEN N'RetailCustomer'
+    WHEN [e].[Id] IS NOT NULL THEN N'Employee'
+END AS [Discriminator]
+FROM [User] AS [u]
+LEFT JOIN [Employee] AS [e] ON [u].[Id] = [e].[Id]
+LEFT JOIN [RetailCustomer] AS [r] ON [u].[Id] = [r].[Id]
+LEFT JOIN [SellerCustomer] AS [s] ON [u].[Id] = [s].[Id]
+2023-08-15 17:26:14.657 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ECommerce.Entity.Concrete.User, ECommerce.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-15 17:26:16.742 +03:00 [INF] Executed action ECommerce.UI.Controllers.RetailCustomerController.GetAllUser (ECommerce.UI) in 11677.0201ms
+2023-08-15 17:26:16.742 +03:00 [INF] Executed endpoint 'ECommerce.UI.Controllers.RetailCustomerController.GetAllUser (ECommerce.UI)'
+2023-08-15 17:26:16.742 +03:00 [INF] /retailcustomer/getalluser Çalıştı
+2023-08-15 17:26:16.756 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:61354/retailcustomer/getalluser - - - 200 - application/json;+charset=utf-8 18461.6055ms
