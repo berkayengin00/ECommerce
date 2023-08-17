@@ -14,7 +14,7 @@
     }
     public interface IReadService<T> where T : class, new()
     {
-	    Result GetAll(T entity);
+	    DataResult<T> GetAll(T entity);
     }
 
 }

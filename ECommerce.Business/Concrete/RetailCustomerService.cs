@@ -4,7 +4,7 @@ using ECommerce.Entity.Concrete;
 
 namespace ECommerce.Business.Concrete
 {
-	public class RetailCustomerService:IRetailCustomerService
+	public class RetailCustomerManager:IRetailCustomerService
 	{
 		public Result Add(RetailCustomer entity)
 		{
@@ -21,7 +21,7 @@ namespace ECommerce.Business.Concrete
 			throw new NotImplementedException();
 		}
 
-		public Result GetAll(RetailCustomer entity)
+		public DataResult<RetailCustomer> GetAll(RetailCustomer entity)
 		{
 			throw new NotImplementedException();
 		}
