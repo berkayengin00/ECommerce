@@ -1,22 +1,32 @@
-﻿using ECommerce.DataAccess.Abstract;
+﻿using ECommerce.Business.Abstract;
+using ECommerce.DataAccess.Abstract;
 using ECommerce.Entity.Concrete;
+using ECommerce.Entity.DTOs.RetailCustomer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.UI.Controllers
 {
 	public class RetailCustomerController : Controller
 	{
-		private IUserDal _userDal;
-
-		public RetailCustomerController(IUserDal userDal)
+		private readonly IRetailCustomerService _retailCustomerService;
+		public RetailCustomerController(IRetailCustomerService retailCustomerService)
 		{
-			_userDal = userDal;
+			_retailCustomerService = retailCustomerService;
 		}
 
-		public async Task<IActionResult> GetAllUser()
+		public async Task<IActionResult> Register()
 		{
-			var result = await _userDal.GetAllAsync();
-			return Json(result);
+			var user = new RetailCustomerForRegisterVM()
+			{
+				Email = "berk@berk.com",
+				Age = DateTime.Now,
+				FirstName = "Berk",
+				Lastname = "Ay",
+				Password = "345"
+			};
+
+			var result = _retailCustomerService.Add(user);
+			return null;
 		}
 	}
 }

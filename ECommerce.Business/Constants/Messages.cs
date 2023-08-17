@@ -47,5 +47,7 @@ namespace ECommerce.Business.Constants
 		public static string UserNotFound = "Kullanıcı Bulunamadı"; 
 
 		#endregion
+
+		public static string RetailCustomerExists = "Bireysel Müşteri Mevcut";
 	}
 }

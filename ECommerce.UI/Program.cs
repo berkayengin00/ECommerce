@@ -1,4 +1,6 @@
-using Autofac.Core;
+using ECommerce.Business.Abstract;
+using ECommerce.Business.Concrete;
+using ECommerce.Business.Mapping.AutoMapper;
 using ECommerce.Core.Extensions.Service;
 using ECommerce.DataAccess.Abstract;
 using ECommerce.DataAccess.Concrete.EntityFramework;
@@ -6,6 +8,7 @@ using ECommerce.DataAccess.Concrete.EntityFramework.Context;
 using ECommerce.UI.Filter;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Swashbuckle.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,12 @@ builder.Services.AddControllersWithViews(options =>
 {
 	options.Filters.Add<CustomExceptionFilter>();
 });
+
+#region AutoMapper
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+#endregion
 
 #region Serilog
 
@@ -31,8 +40,15 @@ builder.Services.AddDbContext<ECommerceContext>(config => config.UseSqlServer(co
 
 #endregion
 
+#region Business Configuraiton
+
+builder.Services.AddScoped<IRetailCustomerService, RetailCustomerManager>();
+
+#endregion
+
 #region DAL Configuration
 
+builder.Services.AddScoped<IRetailCustomerDal, EfRetailCustomer>();
 builder.Services.AddScoped<IUserDal, EfUserDal>();
 
 
