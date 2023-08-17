@@ -47,8 +47,8 @@ namespace ECommerce.DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PasswordHash = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    PasswordSalt = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PasswordHash = table.Column<byte[]>(type: "varbinary(500)", maxLength: 500, nullable: false),
+                    PasswordSalt = table.Column<byte[]>(type: "varbinary(500)", maxLength: 500, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -143,7 +143,7 @@ namespace ECommerce.DataAccess.Migrations
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "Id", "CreatedDate", "RoleName", "Status", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(2023, 7, 22, 23, 54, 13, 218, DateTimeKind.Local).AddTicks(4545), "SuperAdmin", true, new DateTime(2023, 7, 22, 23, 54, 13, 218, DateTimeKind.Local).AddTicks(4559) });
+                values: new object[] { 1, new DateTime(2023, 8, 17, 19, 59, 17, 277, DateTimeKind.Local).AddTicks(5786), "SuperAdmin", true, new DateTime(2023, 8, 17, 19, 59, 17, 277, DateTimeKind.Local).AddTicks(5798) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_CategoryId",

@@ -122,10 +122,10 @@ namespace ECommerce.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 7, 22, 23, 54, 13, 218, DateTimeKind.Local).AddTicks(4545),
+                            CreatedDate = new DateTime(2023, 8, 17, 19, 59, 17, 277, DateTimeKind.Local).AddTicks(5786),
                             RoleName = "SuperAdmin",
                             Status = true,
-                            UpdatedDate = new DateTime(2023, 7, 22, 23, 54, 13, 218, DateTimeKind.Local).AddTicks(4559)
+                            UpdatedDate = new DateTime(2023, 8, 17, 19, 59, 17, 277, DateTimeKind.Local).AddTicks(5798)
                         });
                 });
 
@@ -145,15 +145,15 @@ namespace ECommerce.DataAccess.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("varbinary(500)");
 
-                    b.Property<string>("PasswordSalt")
+                    b.Property<byte[]>("PasswordSalt")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("varbinary(500)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");

@@ -7,7 +7,7 @@ namespace ECommerce.Core.DataAccess.EntityFramework.Concrete
     public class EfRepositoryBase<T,TContext>: IDeletedRepository<T>,IDeletedRepositoryAsync<T>,
 		IUpdatedRepository<T>,IUpdatedRepositoryAsync<T>,
 		IAddedRepository<T>,IAddedRepositoryAsync<T>,
-		IReadRepository<T>,IReadRepositoryAsync<T> where T: class ,new() where TContext : DbContext
+		IReadRepository<T>,IReadRepositoryAsync<T>,IGetRepository<T>,IGetRepositoryAsync<T> where T: class ,new() where TContext : DbContext
     {
 	    private TContext _db;
 
@@ -68,6 +68,16 @@ namespace ECommerce.Core.DataAccess.EntityFramework.Concrete
 			return query == null
 				? await _db.Set<T>().ToListAsync()
 				: await _db.Set<T>().Where(query).ToListAsync();
+		}
+
+		public T Get(Func<T, bool> query)
+		{
+			return _db.Set<T>().FirstOrDefault(query);
+		}
+
+		public Task<T> GetAsync(Expression<Func<T, bool>>? query = null)
+		{
+			return _db.Set<T>().FirstOrDefaultAsync(query);
 		}
     }
 }
