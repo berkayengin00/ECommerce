@@ -1,4 +1,6 @@
-﻿namespace ECommerce.Core.Result.BaseType
+﻿using System.Linq.Expressions;
+
+namespace ECommerce.Core.Result.BaseType
 {
     public interface IAddedService<T> where T : class,new()
 	{
@@ -14,7 +16,7 @@
     }
     public interface IReadService<T> where T : class, new()
     {
-	    DataResult<T> GetAll(T entity);
+	    DataResult<List<T>> GetAll();
     }
 
 }

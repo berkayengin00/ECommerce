@@ -12,4 +12,7 @@ public class DataResult<T> : Result
     {
         Data = data;
     }
+    public DataResult(string message,bool isSuccess) : base(message,isSuccess)
+    {
+    }
 }

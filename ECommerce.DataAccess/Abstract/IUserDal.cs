@@ -8,7 +8,7 @@ using ECommerce.Entity.Concrete;
 
 namespace ECommerce.DataAccess.Abstract
 {
-	public interface IUserDal:IAddedRepository<User>,IAddedRepositoryAsync<User>,IReadRepositoryAsync<User>,IReadRepository<User>
+	public interface IUserDal:IReadRepositoryAsync<User>,IReadRepository<User>
 	{
 	}
 }

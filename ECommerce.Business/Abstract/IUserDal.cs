@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Business.Abstract
 {
-	public interface IUserService: IAddedService<User>, IUpdatedService<User>, IDeletedService<User>, IReadService<User>
+	public interface IUserService: IReadService<User>
 	{
-
 	}
 }
