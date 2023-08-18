@@ -23,13 +23,13 @@ namespace ECommerce.Business.Concrete
 		}
 		public DataResult<User> CheckUser(UserForLogin user)
 		{
-			// Girilen şifreye göre passwordHash ve passwordSalt değerleri oluşturuluyor Db de kontrol etmek için
-			HashingHelper.CreatePasswordHash(user.Password,out var passwordHash,out var passwordSalt);
+			
+			var result = _userDal.Get(x => x.Email == user.Email);
+			
+			// Db den gelen salt ile hash yeniden üretilip parametreden giden hahsle karşılaştırılyor.
+			var isSuccess = result != null && HashingHelper.VerifyPasswordHash(user.Password,result.PasswordHash,result.PasswordSalt);
 
-			var result = _userDal.Get(x =>
-				x.Email == user.Email && x.PasswordHash == passwordHash && x.PasswordSalt == passwordSalt);
-
-			return result!=null
+			return isSuccess 
 				? new SuccessDataResult<User>(Messages.AccountInformationIsCorrect, result)
 				: new ErrorDataResult<User>(Messages.UserNotFound);
 

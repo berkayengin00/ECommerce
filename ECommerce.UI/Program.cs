@@ -43,6 +43,8 @@ builder.Services.AddDbContext<ECommerceContext>(config => config.UseSqlServer(co
 #region Business Configuraiton
 
 builder.Services.AddScoped<IRetailCustomerService, RetailCustomerManager>();
+builder.Services.AddScoped<IUserService, UserManager>();
+builder.Services.AddScoped<IAccountService, AccountManager>();
 
 #endregion
 

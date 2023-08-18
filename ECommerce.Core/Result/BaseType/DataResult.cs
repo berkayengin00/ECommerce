@@ -2,7 +2,7 @@
 
 public class DataResult<T> : Result
 {
-    private T Data { get; set; }
+    public T Data { get; set; }
     public DataResult(string message, T data, bool isSuccess) : base(message, isSuccess)
     {
         Data = data;
@@ -16,3 +16,4 @@ public class DataResult<T> : Result
     {
     }
 }
+

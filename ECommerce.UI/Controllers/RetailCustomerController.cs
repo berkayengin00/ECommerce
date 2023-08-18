@@ -1,8 +1,9 @@
 ﻿using ECommerce.Business.Abstract;
-using ECommerce.DataAccess.Abstract;
+using ECommerce.Core.Result.BaseType;
 using ECommerce.Entity.Concrete;
 using ECommerce.Entity.DTOs.RetailCustomer;
 using Microsoft.AspNetCore.Mvc;
+using IResult = ECommerce.Core.Result.BaseType.IResult;
 
 namespace ECommerce.UI.Controllers
 {
@@ -28,5 +29,7 @@ namespace ECommerce.UI.Controllers
 			var result = _retailCustomerService.Add(user);
 			return null;
 		}
+
+		
 	}
 }

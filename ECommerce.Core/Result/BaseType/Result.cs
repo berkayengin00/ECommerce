@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Core.Result.BaseType
 {
-    public class Result
+    public interface IResult{}
+
+    public class Result:IResult
     {
-        private string Message { get; set; }
-        private bool IsSuccess { get; set; }
+        public string Message { get; }
+        public bool IsSuccess { get; }
 
         public Result(string message, bool isSuccess)
         {
@@ -22,6 +24,10 @@ namespace ECommerce.Core.Result.BaseType
             IsSuccess = isSuccess;
         }
 
+        public Result()
+        {
+	        
+        }
 
     }
 }
