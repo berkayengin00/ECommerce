@@ -1,3 +1,4 @@
+using Autofac.Core;
 using ECommerce.Business.Abstract;
 using ECommerce.Business.Concrete;
 using ECommerce.Business.Mapping.AutoMapper;
@@ -6,6 +7,8 @@ using ECommerce.DataAccess.Abstract;
 using ECommerce.DataAccess.Concrete.EntityFramework;
 using ECommerce.DataAccess.Concrete.EntityFramework.Context;
 using ECommerce.UI.Filter;
+using ECommerce.UI.Utilities.Cookies;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Swashbuckle.Swagger;
@@ -56,6 +59,8 @@ builder.Services.AddScoped<IUserDal, EfUserDal>();
 
 #endregion
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Logging.AddSerilog();
 
 var app = builder.Build();
@@ -77,6 +82,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
