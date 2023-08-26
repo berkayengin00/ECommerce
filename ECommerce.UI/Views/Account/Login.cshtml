@@ -2,7 +2,7 @@
 <html>
 @model ECommerce.Entity.DTOs.User.UserForLogin
 <head>
-    <meta charset="utf-8">S
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/LoginThema/fontawesome.css" type="text/css">
     <!-- Argon CSS -->
     <link rel="stylesheet" href="~/LoginThema/site.css" type="text/css">
+    <link rel="stylesheet" href="~/LoginThema/nucleo/css/nucleo.css" type="text/css">
 </head>
 
 <body class="bg-default">
@@ -49,11 +50,11 @@
                             <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
                             <div class="btn-wrapper text-center">
                                 <a href="#" class="btn btn-neutral btn-icon">
-                                    <span class="btn-inner--icon"><img src="../assets/img/icons/common/github.svg"></span>
+                                    <span class="btn-inner--icon"><img src="~/LoginThema/icons/common/github.svg"></span>
                                     <span class="btn-inner--text">Github</span>
                                 </a>
-                                <a href="#" class="btn btn-neutral btn-icon">
-                                    <span class="btn-inner--icon"><img src="../assets/img/icons/common/google.svg"></span>
+                                <a asp-controller="Account" asp-action="GoogleLogin" class="btn btn-neutral btn-icon">
+                                    <span class="btn-inner--icon"><img src="~/LoginThema/icons/common/google.svg"></span>
                                     <span class="btn-inner--text">Google</span>
                                 </a>
                             </div>
@@ -65,13 +66,14 @@
 	                        <form asp-action="Login" method="post">
                                 @Html.AntiForgeryToken()
 		                        <div class="form-group mb-3">
-			                        <div class="input-group input-group-merge input-group-alternative">
+			                        <div class="input-group-merge input-group-alternative">
 				                        <div class="input-group-prepend">
 					                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
 					                        <input asp-for="Email" class="form-control" placeholder="Email" type="email">
+					                        <span asp-validation-for="Email" class="alert-danger"></span>
 				                        </div>
 			                        </div>
-			                        <span asp-validation-for="Email" class="alert-danger"></span>
+			                        
 		                        </div>
 		                        <div class="form-group">
 			                        <div class="input-group input-group-merge input-group-alternative">

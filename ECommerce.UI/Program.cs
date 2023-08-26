@@ -1,4 +1,3 @@
-using Autofac.Core;
 using ECommerce.Business.Abstract;
 using ECommerce.Business.Concrete;
 using ECommerce.Business.Mapping.AutoMapper;
@@ -7,11 +6,10 @@ using ECommerce.DataAccess.Abstract;
 using ECommerce.DataAccess.Concrete.EntityFramework;
 using ECommerce.DataAccess.Concrete.EntityFramework.Context;
 using ECommerce.UI.Filter;
-using ECommerce.UI.Utilities.Cookies;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Swashbuckle.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +17,25 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(options =>
 {
 	options.Filters.Add<CustomExceptionFilter>();
+
 });
+
+#region GoogleAuthentication
+
+builder.Services.AddAuthentication(options =>
+{
+	//options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+	options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddGoogle(options =>
+{
+	options.ClientId = builder.Configuration["GoogleLogin:ClientId"];
+	options.ClientSecret = builder.Configuration["GoogleLogin:SecretKey"];
+	options.CallbackPath = "/Account/GoogleResponse";
+
+});
+
+#endregion
 
 #region AutoMapper
 
@@ -77,7 +93,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,8 +1,9 @@
 ﻿using ECommerce.Business.Abstract;
-using ECommerce.Core.Result.BaseType;
-using ECommerce.Entity.Concrete;
+using ECommerce.Core.Extensions.Cookie;
 using ECommerce.Entity.DTOs.User;
-using ECommerce.UI.Utilities.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.UI.Controllers
@@ -37,6 +38,18 @@ namespace ECommerce.UI.Controllers
 
 		}
 
+		public IActionResult GoogleLogin()
+		{
+			var redirectUrl = Url.Action("GoogleResponse", "Account", null, protocol: HttpContext.Request.Scheme);
+			var properties = new AuthenticationProperties { RedirectUri = redirectUrl };
+			return Challenge(properties, GoogleDefaults.AuthenticationScheme);
+		}
+
+		public async Task<IActionResult> GoogleResponse()
+		{
+			var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			return RedirectToAction("Index", "Home");
+		}
 		[NonAction]
 		public void RememberMe(UserForLogin user)
 		{
