@@ -1,13 +1,13 @@
 using ECommerce.Business.Abstract;
 using ECommerce.Business.Concrete;
 using ECommerce.Business.Mapping.AutoMapper;
+using ECommerce.Business.Validator.reCaptcha;
 using ECommerce.Core.Extensions.Service;
 using ECommerce.DataAccess.Abstract;
 using ECommerce.DataAccess.Concrete.EntityFramework;
 using ECommerce.DataAccess.Concrete.EntityFramework.Context;
 using ECommerce.UI.Filter;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -64,6 +64,7 @@ builder.Services.AddDbContext<ECommerceContext>(config => config.UseSqlServer(co
 builder.Services.AddScoped<IRetailCustomerService, RetailCustomerManager>();
 builder.Services.AddScoped<IUserService, UserManager>();
 builder.Services.AddScoped<IAccountService, AccountManager>();
+builder.Services.AddScoped<ICaptchaValidator, CaptchaValidator>();
 
 #endregion
 

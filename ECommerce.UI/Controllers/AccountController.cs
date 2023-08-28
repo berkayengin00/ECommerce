@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net;
+using ECommerce.Business.Validator.reCaptcha;
 
 namespace ECommerce.UI.Controllers
 {
@@ -12,10 +15,12 @@ namespace ECommerce.UI.Controllers
 	{
 
 		private readonly IAccountService _accountService;
+		private readonly ICaptchaValidator _captchaValidator;
 
-		public AccountController(IAccountService accountService)
+		public AccountController(IAccountService accountService, ICaptchaValidator captchaValidator)
 		{
 			_accountService = accountService;
+			_captchaValidator = captchaValidator;
 		}
 
 		[HttpGet]
@@ -28,8 +33,8 @@ namespace ECommerce.UI.Controllers
 		[HttpPost,ValidateAntiForgeryToken]
 		public IActionResult Login(UserForLogin user)
 		{
-			if (!ModelState.IsValid) return View();
-
+			if (!ModelState.IsValid || !IsVerifyCaptcha()) return View();
+			
 			var result = _accountService.CheckUser(user);
 			if (!result.IsSuccess) return View(user);
 
@@ -59,5 +64,13 @@ namespace ECommerce.UI.Controllers
 			}
 		}
 
+		[NonAction]
+		public bool IsVerifyCaptcha()
+		{
+			var response = Request.Form["g-recaptcha-response"];
+			var captchaResult = _captchaValidator.IsVerify(response);
+
+			return captchaResult.IsSuccess;
+		}
 	}
 }
