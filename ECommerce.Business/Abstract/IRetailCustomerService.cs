@@ -10,7 +10,7 @@ using ECommerce.Entity.DTOs.RetailCustomer;
 
 namespace ECommerce.Business.Abstract
 {
-	public interface IRetailCustomerService:IAddedService<RetailCustomerForRegisterVM>,IUpdatedService<RetailCustomer>,IDeletedService<RetailCustomer>,IReadService<RetailCustomer>
+	public interface IRetailCustomerService:IAddedService<RetailCustomerForRegisterVM>,IUpdatedService<RetailCustomer>,IDeletedService<RetailCustomer>,IReadService<RetailCustomer>,IAddedAsyncService<RetailCustomerForRegisterVM>
 	{
 	}
 }

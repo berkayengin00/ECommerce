@@ -87,5 +87,19 @@ namespace ECommerce.Business.Concrete
 				? new ErrorDataResult<List<RetailCustomer>>(Messages.RetailCustomerNotGetAll)
 				: new SuccessDataResult<List<RetailCustomer>>(Messages.RetailCustomerGetAll, result);
 		}
+
+		public async Task<Result> AddAsync(RetailCustomerForRegisterVM entity)
+		{
+			if (RetailCustomerExists(entity.Email))
+			{
+				return new ErrorResult(Messages.RetailCustomerExists);
+			}
+
+			var result = await _retailCustomerDal.AddAsync(CreatePasswordHashAndSalt(entity));
+
+			return result == false
+				? new ErrorResult(Messages.RetailCustomerNotAdded)
+				: new SuccessResult(Messages.RetailCustomerAdded);
+		}
 	}
 }

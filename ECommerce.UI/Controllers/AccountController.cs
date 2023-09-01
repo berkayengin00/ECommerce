@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
 using ECommerce.Business.Validator.reCaptcha;
+using ECommerce.Entity.DTOs.RetailCustomer;
 
 namespace ECommerce.UI.Controllers
 {
@@ -15,11 +16,13 @@ namespace ECommerce.UI.Controllers
 	{
 
 		private readonly IAccountService _accountService;
+		private readonly IRetailCustomerService _retailCustomerService;
 		private readonly ICaptchaValidator _captchaValidator;
 
-		public AccountController(IAccountService accountService, ICaptchaValidator captchaValidator)
+		public AccountController(IAccountService accountService, IRetailCustomerService customerService, ICaptchaValidator captchaValidator)
 		{
 			_accountService = accountService;
+			_retailCustomerService = customerService;
 			_captchaValidator = captchaValidator;
 		}
 
@@ -43,6 +46,23 @@ namespace ECommerce.UI.Controllers
 
 		}
 
+		[HttpGet]
+		public IActionResult RegisterForRetailCustomer()
+		{
+			return View(new RetailCustomerForRegisterVM());
+		}
+
+		[HttpPost,ValidateAntiForgeryToken]
+		public async Task<IActionResult> RegisterForRetailCustomer(RetailCustomerForRegisterVM user)
+		{
+			if(!ModelState.IsValid) return View();
+
+			var result = await _retailCustomerService.AddAsync(user);
+			if (!result.IsSuccess) return View(user);
+			
+			return RedirectToAction("Index","Home");
+		}
+
 		public IActionResult GoogleLogin()
 		{
 			var redirectUrl = Url.Action("GoogleResponse", "Account", null, protocol: HttpContext.Request.Scheme);
@@ -64,6 +84,10 @@ namespace ECommerce.UI.Controllers
 			}
 		}
 
+		/// <summary>
+		/// Captcha Doğrulama servisine gider ve kontrol eder.
+		/// </summary>
+		/// <returns>True or False</returns>
 		[NonAction]
 		public bool IsVerifyCaptcha()
 		{

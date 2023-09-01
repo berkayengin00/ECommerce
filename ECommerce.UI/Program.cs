@@ -1,12 +1,16 @@
 using ECommerce.Business.Abstract;
 using ECommerce.Business.Concrete;
 using ECommerce.Business.Mapping.AutoMapper;
+using ECommerce.Business.Validator.FluentValidation;
 using ECommerce.Business.Validator.reCaptcha;
 using ECommerce.Core.Extensions.Service;
 using ECommerce.DataAccess.Abstract;
 using ECommerce.DataAccess.Concrete.EntityFramework;
 using ECommerce.DataAccess.Concrete.EntityFramework.Context;
+using ECommerce.Entity.DTOs.RetailCustomer;
 using ECommerce.UI.Filter;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -19,6 +23,10 @@ builder.Services.AddControllersWithViews(options =>
 	options.Filters.Add<CustomExceptionFilter>();
 
 });
+
+builder.Services.AddFluentValidationAutoValidation();
+
+builder.Services.AddScoped<IValidator<RetailCustomerForRegisterVM>, RetailCustomerVmValidator>();
 
 #region GoogleAuthentication
 

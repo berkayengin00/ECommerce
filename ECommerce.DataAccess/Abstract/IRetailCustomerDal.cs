@@ -8,7 +8,7 @@ using ECommerce.Entity.Concrete;
 
 namespace ECommerce.DataAccess.Abstract
 {
-    public interface IRetailCustomerDal:IReadRepository<RetailCustomer>,IDeletedRepository<RetailCustomer>,IUpdatedRepository<RetailCustomer>,IAddedRepository<RetailCustomer>,IGetRepository<RetailCustomer>
+    public interface IRetailCustomerDal:IReadRepository<RetailCustomer>,IDeletedRepository<RetailCustomer>,IUpdatedRepository<RetailCustomer>,IAddedRepository<RetailCustomer>,IGetRepository<RetailCustomer>,IAddedRepositoryAsync<RetailCustomer>
 	{
 	}
 }

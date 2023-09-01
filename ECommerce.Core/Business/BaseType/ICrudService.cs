@@ -6,7 +6,11 @@ namespace ECommerce.Core.Result.BaseType
 	{
 		Result Add(T entity);
 	}
-    public interface IDeletedService<T> where T : class, new()
+    public interface IAddedAsyncService<T> where T : class, new()
+    {
+	    Task<Result> AddAsync(T entity);
+    }
+	public interface IDeletedService<T> where T : class, new()
     {
 	    Result Delete(T entity);
     }
