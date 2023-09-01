@@ -1,23 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
+
+@inject IConfiguration Configuration
 @model ECommerce.Entity.DTOs.User.UserForLogin
+
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-    <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-    <!-- Favicon -->
-    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <!-- Icons -->
-    <link rel="stylesheet" href="~/LoginThema/StyleSheet.css" type="text/css">
-    <link rel="stylesheet" href="~/LoginThema/fontawesome.css" type="text/css">
-    <!-- Argon CSS -->
-    <link rel="stylesheet" href="~/LoginThema/site.css" type="text/css">
-    <link rel="stylesheet" href="~/LoginThema/nucleo/css/nucleo.css" type="text/css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+	<meta name="author" content="Creative Tim">
+	<title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+	<!-- Favicon -->
+	<link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+	<!-- Icons -->
+	<link rel="stylesheet" href="~/LoginThema/StyleSheet.css" type="text/css">
+	<link rel="stylesheet" href="~/LoginThema/fontawesome.css" type="text/css">
+	<!-- Argon CSS -->
+	<link rel="stylesheet" href="~/LoginThema/site.css" type="text/css">
+	<link rel="stylesheet" href="~/LoginThema/nucleo/css/nucleo.css" type="text/css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="bg-default">
@@ -74,7 +78,7 @@
 										<span asp-validation-for="Email" class="alert-danger"></span>
 									</div>
 								</div>
-			                        
+
 							</div>
 							<div class="form-group">
 								<div class="input-group input-group-merge input-group-alternative">
@@ -91,7 +95,7 @@
 									<span class="text-muted">Remember me</span>
 								</label>
 							</div>
-							<div class="g-recaptcha" data-sitekey="6LfK3dYnAAAAAPas0uwkV5nq5S3K1EoIpozYGLhN" data-callback="onloadCallback"></div>
+								<div class="g-recaptcha" data-sitekey="@Configuration["Captchav2:PrivateKey"]" data-callback="onloadCallback"></div>
 							<div class="text-center">
 								<button type="submit" class="btn btn-primary my-4">Sign in</button>
 							</div>
